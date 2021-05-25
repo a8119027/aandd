@@ -12,3 +12,9 @@ function show(array) {
     document.getElementById('res').insertAdjacentHTML('beforeend', html);
     
 }
+
+function createSequentialNumbers(array, n) {
+    for (var i = 1; i <= n; i++) {
+        numbers.push(i)
+    }
+}
