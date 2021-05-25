@@ -10,6 +10,41 @@
 
     <script>
         function runButtonPressed() {
+            var numbers = []
+            for(var i=1; i<=10; i++){
+                numbers.push(i)
+            }
+
+            show(numbers)
+
+            // 課題2-1
+            // var x = numbers[1]
+            // numbers[1] = numbers[3]
+            // numbers[3] = x
+
+
+            //課題2-2,2-3
+            for(var i=0; i<20; i++){
+                var n = Math.floor(Math.random() * 10) + 1 
+                console.log(n);
+                var m = Math.floor(Math.random() * 10) + 1 
+                console.log(m);
+
+                var x = numbers[n - 1]
+                numbers[n - 1] = numbers[m - 1]
+                numbers[m - 1] = x
+            }
+
+            // //課題2-4
+            // var numbers2=[]
+            // for(var i=0;i<=numbers.length;i++){
+            //     var x = numbers[i];
+            //     console.log(x);
+            //     numbers2.push(x);
+            // }
+
+
+            show(numbers)
             //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
             //(nとmは乱数にて決定する)
