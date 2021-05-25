@@ -15,6 +15,13 @@ function show(array) {
 
 function createSequentialNumbers(array, n) {
     for (var i = 1; i <= n; i++) {
-        numbers.push(i)
+        array.push(i)
+    }
+}
+
+function createRandomNumbers(array, n) {
+    for (var i = 0; i < n; i++) {
+        var x = Math.round(Math.random() * 100)
+        array.push(x);
     }
 }
