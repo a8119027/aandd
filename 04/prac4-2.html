@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            for (var i = 0; i < 5; i++) {
+                var x = Math.round(Math.random() * 10) + 1
+                numbers.push(x);
+            }
+            //prac1-5〜 1から10までの数を順に10個挿入する
+            show(numbers);
+
+            var numbers2 = [];
+
+            for (var i = 0; i < 5; i++) {
+                if(numbers[i] >= 3){
+                    numbers2.push(numbers[i]);
+                } 
+            }
+            //prac4-2 要素が3以上だったら配列2に追加
+            show(numbers2);
+
+            
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4-2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
