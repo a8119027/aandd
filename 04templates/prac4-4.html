@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            var x = 25;
+            var lower = 0;
+            var upper = 19;
+
+            createOrderedRandomNumbers(numbers, 20);
+            show(numbers);
+
+            for (; ;) {
+                //show(upper)
+                //show(lower)
+                if (upper <= lower + 1) {
+                    show(x + "はありません");
+                    break;
+
+                }
+                var mid = Math.floor((lower + upper) / 2);
+                if (x == numbers[mid]) {
+                    show(mid + 1+"番目");
+                    break;
+                } else if (x < numbers[mid]) {
+                    upper = mid;
+                } else if (x > numbers[mid]) {
+                    lower = mid;
+                }
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>ex4-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
