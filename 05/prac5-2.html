@@ -11,35 +11,47 @@
 
     <script>
         function runButtonPressed() {
-            var numbers = []
+            var numbers = [];
             for (var i = 0; i < 10; i++) {
                 var x = Math.round(Math.random() * 10)
                 numbers.push(x);
             }
             show(numbers)
 
-            for(var j = 0; i < 10; i++){
-
-            }
-
             //prac3-4 10個の乱数の最小値を求める
-            var min = 1000;
-            var min_index = 0;
-            var i = 0;
-            for (var i = 0; i < numbers.length; i++) {
+                for (j = 0; j < 10; j++) {
+                    var min = 1000;
+                    var min_index = 0;
+                    for (var i = 0 + j; i < numbers.length; i++) {
 
-                if (numbers[i] < min) {
-                    min = numbers[i];
-                    min_index = i;
+                        if (numbers[i] < min) {
+                            min = numbers[i];
+                            min_index = i;
+                        }
+                        console.log(i);     
+                    }
+                    var x = numbers[0 + j];
+                    numbers[0 + j] = numbers[min_index];
+                    numbers[min_index] = x;
                 }
-            }
+            
+            
 
-            show(min);
-            show(min_index);
-            var x = numbers[0];
-            numbers[0] = numbers[min_index];
-            numbers[min_index] = x;
+
+                
+
             show(numbers);
+
+            // for (var i = 0 + 1; i < numbers.length - 1; i++) {
+
+            //     if (numbers[i] < min) {
+            //         min = numbers[i];
+            //         min_index = i;
+            //     }
+            // }
+
+            
+            
 
 
 
@@ -50,7 +62,7 @@
 </head>
 
 <body>
-    <h1>prac4-1</h1>
+    <h1>prac5-2</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>

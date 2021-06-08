@@ -11,19 +11,47 @@
 
     <script>
         function runButtonPressed() {
-            var numbers = []
+            var numbers = [];
             for (var i = 0; i < 10; i++) {
                 var x = Math.round(Math.random() * 10)
                 numbers.push(x);
             }
-            show(numbers)
+            show(numbers);
+
+            var mark;
+            mark = numbers[0];
+            mark = numbers[1];
+            if (numbers[1] < numbers[0]) {
+                var x = numbers[0];
+                numbers[0] = numbers[1];
+                numbers[1] = x;
+            }
+
+            show(numbers);
+
+            if(numbers[2] < numbers[1]){
+                var x = numbers[2];
+                numbers[1] = numbers[2];
+                numbers[2] = x;
+            }
+
+            if (numbers[2] < numbers[1]) {
+                var x = numbers[2];
+                numbers[1] = numbers[2];
+                numbers[2] = x;
+            }
         }
+
+        
+
+
+
     </script>
 
 </head>
 
 <body>
-    <h1>prac4-1</h1>
+    <h1>prac5-3</h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
