@@ -1,0 +1,46 @@
+<!-- 5-1 バブルソート -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            for (var i = 0; i < 10; i++) {
+                var x = Math.round(Math.random() * 10)
+                numbers.push(x);
+            }
+            show(numbers);
+
+            for(var j = 0; j < 10; j ++){
+                for (var i = 0; i < 10; i++) {
+                    if (numbers[i] > numbers[i + 1]) {
+                        var x = numbers[i];
+                        numbers[i] = numbers[i + 1];
+                        numbers[i + 1] = x;
+                        console.log(i)
+                    }
+                }
+            }
+            
+            
+            
+            show(numbers)
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

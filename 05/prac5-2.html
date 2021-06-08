@@ -1,0 +1,58 @@
+<!-- 5-2 選択ソート -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = []
+            for (var i = 0; i < 10; i++) {
+                var x = Math.round(Math.random() * 10)
+                numbers.push(x);
+            }
+            show(numbers)
+
+            for(var j = 0; i < 10; i++){
+
+            }
+
+            //prac3-4 10個の乱数の最小値を求める
+            var min = 1000;
+            var min_index = 0;
+            var i = 0;
+            for (var i = 0; i < numbers.length; i++) {
+
+                if (numbers[i] < min) {
+                    min = numbers[i];
+                    min_index = i;
+                }
+            }
+
+            show(min);
+            show(min_index);
+            var x = numbers[0];
+            numbers[0] = numbers[min_index];
+            numbers[min_index] = x;
+            show(numbers);
+
+
+
+            
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
