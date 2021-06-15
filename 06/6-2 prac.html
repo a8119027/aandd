@@ -1,3 +1,4 @@
+<!-- 6-2 （回文）判定さん -->
 <!DOCTYPE html>
 
 <html>
@@ -10,23 +11,37 @@
 
     <script>
         function runButtonPressed() {
+            var chars2 = []
             var text = document.getElementById('tf1').value;
             show(text);
+
             var chars = text.split('');
-            show(chars);
-            
+            var num = chars.length;
+       
 
-            var text2 = chars.join('');
-            show(text2);
+            for (i = 0; i < num; i++) {
+                var x = chars.pop();
+                chars2.push(x);
+            }
+
+            var text2 = chars2.join('');
+
+            console.log(text);
+            console.log(text2);
+
+            if(text==text2){
+                show("回文です");
+            }else{
+                show("回文ではありません");
+            }
         }
-
     </script>
 
 </head>
 
 <body>
     <h1>split</h1>
-    <input id="tf1" type="text" value="こんにちは">
+    <input id="tf1" type="text" value="">
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
 </body>

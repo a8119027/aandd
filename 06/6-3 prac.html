@@ -1,4 +1,4 @@
-<!-- 6-4 回文作文さん -->
+<!-- 6-3 作文さん -->
 <!DOCTYPE html>
 
 <html>
@@ -15,14 +15,19 @@
     <script>
 
         var nouns;
+        var verbs;
 
         $(document).ready(function () {
             nouns = nounstext.split('\n');
+            verbs = verbstext.split('\n');
+
         });
 
         function runButtonPressed() {
-            var noun = selectone(nouns);
-            show(noun);
+            var noun1 = selectone(nouns);
+            var noun2 = selectone(nouns);
+            var verb = selectone(verbs);
+            show(noun1 + "は" + noun2 + "を" + verb);
         }
 
         function selectone(array) {
@@ -30,6 +35,8 @@
             var index = Math.floor(Math.random() * size);
             return array[index];
         }
+
+        
 
     </script>
 
