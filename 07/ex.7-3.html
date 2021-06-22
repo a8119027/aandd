@@ -1,0 +1,54 @@
+<!-- 誕生日 -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var birthday = {};
+
+
+
+        function registerButtonPressed() {
+            var name = document.getElementById('tf3').value;
+            var day = document.getElementById('tf4').value;
+            birthday[name] = day;
+            console.log(birthday);
+        }
+
+        function runButtonPressed() {
+            var name = document.getElementById('tf1').value;
+            var day = birthday[name];
+            document.getElementById('tf2').value = day;
+            console.log(birthday);
+            if (day) {
+                document.getElementById('tf2').value = day;
+            } else {
+                document.getElementById('tf2').value = name + 'は登録されていません'
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    名前：<input id="tf3" type="text" value="">
+    <br>
+    誕生日：<input id="tf4" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h1>検索</h1>
+    名前：<input id="tf1" type="text" value="">
+    <br>
+    誕生日：<input id="tf2" type="text" value="">
+    <button onclick="runButtonPressed()">検索!</button>
+    <p id="res"></p>
+</body>
+
+</html>

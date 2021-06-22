@@ -1,0 +1,57 @@
+<!-- 7-4 botシステム -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+
+        function registerButtonPressed() {
+            var statement = document.getElementById('tf1').value;
+            var response = document.getElementById('tf3').value;
+            localStorage.setItem(statement,JSON.stringify(response))
+            console.log(localStorage)
+        }
+
+        function runButtonPressed() {
+            var statement = document.getElementById('tf1').value;
+            var response = localStorage.getItem(statement);
+            if(response){
+                response = JSON.parse(response);
+                document.getElementById('tf2').value = response;
+            }else{
+                document.getElementById('tf2').value = statement + 'の返し方がわかりません'
+            }
+            
+        }
+
+        
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+    
+    あなた：<input id="tf1" type="text" value="">
+    <button onclick="runButtonPressed()">発言</button>
+    <br>
+    コンピュータ：<input id="tf2" type="text" value="">
+    
+    <br><br>
+    <input id="tf3" type="text" value="">
+    
+    <button onclick="registerButtonPressed()">教える!</button>
+  
+    <p id="res"></p>
+</body>
+
+</html>

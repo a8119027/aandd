@@ -1,4 +1,4 @@
-<!-- 単語登録1 -->
+<!-- 単語登録2 -->
 <!DOCTYPE html>
 
 <html>
@@ -12,23 +12,20 @@
     <script>
         var fruits = {};
 
-        $().ready(function () {
-            fruits['apple'] = 'りんご';
-            fruits['orange'] = 'みかん';
-            
-        });
+        
 
         function registerButtonPressed() {
             var english = document.getElementById('tf3').value;
             var japanese = document.getElementById('tf4').value;
             fruits[english] = japanese;
+            fruits[japanese] = english;
             console.log(fruits);
         }
 
         function runButtonPressed() {
-            var english = document.getElementById('tf1').value;
-            var japanese = fruits[english];
-            document.getElementById('tf2').value = japanese;
+            var key = document.getElementById('tf1').value;
+            var value = fruits[key];
+            document.getElementById('tf2').value = value;
             console.log(fruits);
         }
 
@@ -38,14 +35,14 @@
 
 <body>
     <h1>登録</h1>
-    英語：<input id="tf3" type="text" value="">
+    単語：<input id="tf3" type="text" value="">
     <br>
-    日本語：<input id="tf4" type="text" value="">
+    意味：<input id="tf4" type="text" value="">
     <button onclick="registerButtonPressed()">登録!</button>
     <h1>検索</h1>
-    英語：<input id="tf1" type="text" value="">
+    単語：<input id="tf1" type="text" value="">
     <br>
-    日本語：<input id="tf2" type="text" value="">
+    意味：<input id="tf2" type="text" value="">
     <button onclick="runButtonPressed()">検索!</button>
     <p id="res"></p>
 </body>
