@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <!-- 単語登録2 -->
+=======
+>>>>>>> afbc084f9a3cfa00b4f26ed2a092257ec2faacc9
 <!DOCTYPE html>
 
 <html>
@@ -12,6 +15,7 @@
     <script>
         var fruits = {};
 
+<<<<<<< HEAD
         
 
         function registerButtonPressed() {
@@ -27,6 +31,20 @@
             var value = fruits[key];
             document.getElementById('tf2').value = value;
             console.log(fruits);
+=======
+        $().ready(function () {
+            fruits['apple'] = 'りんご';
+            fruits['orange'] = 'みかん';
+        });
+
+        function saveButtonPressed() {
+            localStorage.setItem('ObjectX', fruits);
+        }
+
+        function loadButtonPressed() {
+            var loaded = localStorage.getItem('ObjectX');
+            console.log(loaded);
+>>>>>>> afbc084f9a3cfa00b4f26ed2a092257ec2faacc9
         }
 
     </script>
@@ -34,6 +52,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <h1>登録</h1>
     単語：<input id="tf3" type="text" value="">
     <br>
@@ -44,6 +63,11 @@
     <br>
     意味：<input id="tf2" type="text" value="">
     <button onclick="runButtonPressed()">検索!</button>
+=======
+    <h1>save and load</h1>
+    <button onclick="saveButtonPressed()">save!</button>
+    <button onclick="loadButtonPressed()">load!</button>
+>>>>>>> afbc084f9a3cfa00b4f26ed2a092257ec2faacc9
     <p id="res"></p>
 </body>
 
